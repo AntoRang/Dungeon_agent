@@ -261,6 +261,11 @@ def convert_path(came_from, coordinates):
                 path_list.append(i)
     return path_list
 
+def read_map(mapfile):
+    with open(mapfile, 'r') as f:
+        world_map = f.readlines()
+    world_map = [line.strip() for line in world_map]
+    return (world_map)
 
 # diagram4.weights = {loc: 5 for loc in [(3, 4), (3, 5), (4, 1), (4, 2),
 #                                        (4, 3), (4, 4), (4, 5), (4, 6),
@@ -283,7 +288,7 @@ def convert_path(came_from, coordinates):
 # (diag, cost) = draw_grid(diagram4, number=cost_so_far, start=start, goal=goal)
 # print(diag)
 
-# map = 'map.txt'
+# map = 'map1.txt'
 # map = get_map(map)
 # x, y = 0, 0
 # diagrama = GridWithWeights(10,10)

@@ -84,8 +84,6 @@ def main():
     came_from_A, cost_so_far_A = agents.a_star_search(diagrama, start, goal)
     (diag, list_coor) = agents.draw_grid(diagrama, path=agents.reconstruct_path(came_from_A, start=start, goal=goal))
     path = agents.convert_path(came_from_A, list_coor)
-    a_star = diag.split('\n')[:-1]
-
     surface = initialize_game()
     game_loop(surface, world_map, path)
 
